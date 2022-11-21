@@ -1,9 +1,9 @@
-param applicationGatewayName string = 'agw-01'
+param applicationGatewayName string = 'agw-${location}-01'
 param location string = 'eastus'
-param virtualNetworkName string = 'vnet-agw-01'
+param virtualNetworkName string = 'vnet-${applicationGatewayName}'
 param virtualNetworkPrefix string = '192.168.0.0/16' 
 param subnetPrefix string = '192.168.1.0/24' 
-param publicIPAddressName string = 'pip-agwFE-01'
+param publicIPAddressName string = 'pip-${applicationGatewayName}'
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2022-05-01' = {
   name: virtualNetworkName
